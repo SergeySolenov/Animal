@@ -1,6 +1,6 @@
-import animals.*;
-import enums.TypeAnimals;
-import pearents.Animal;
+import enums.Command;
+import getAnimal.GetAnimal;
+import parents.Animal;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,48 +11,22 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        GetAnimal getAnimal = new GetAnimal();
         ArrayList<Animal> animal = new ArrayList<>();
         while (true) {
             System.out.println("Введите команду (add/list/exit):");
-            String com = sc.next();
-            com = com.toUpperCase();
-            if (ADD.toString().equals(com)) {
-                boolean hell = true;
-                while (hell) {
-                    try {
-                        System.out.println("Какое животное(cat/dog/duck)?");
-                        TypeAnimals next = TypeAnimals.valueOf(sc.next().toUpperCase());
-                        switch (next) {
-                            case CAT -> {
-                                System.out.println("Введите: имя, возраст, вес, цвет");
-                                animal.add(new Cat(sc.next(), sc.nextInt(), sc.nextInt(), sc.next()));
-                                hell = false;
-                            }
-                            case DOG -> {
-                                System.out.println("Введите: имя, возраст, вес, цвет");
-                                animal.add(new Dog(sc.next(), sc.nextInt(), sc.nextInt(), sc.next()));
-                                hell = false;
-                            }
-                            case DUCK -> {
-                                System.out.println("Введите: имя, возраст, вес, цвет");
-                                animal.add(new Duck(sc.next(), sc.nextInt(), sc.nextInt(), sc.next()));
-                                hell = false;
-                            }
+            Command com = Command.valueOf(sc.next().toUpperCase());
+            if (com == ADD) {
+                getAnimal.add(sc, animal);
 
-                        }
-                    } catch (Exception e) {
-                        System.out.println("Упс, вы что-то напутали");
-                    }
-
-                }
             }
-            if (LIST.toString().equals(com)) {
+            if (com == LIST) {
                 for (Animal el : animal) {
                     System.out.println(el.toString());
 
                 }
             }
-            if (EXIT.toString().equals(com)) {
+            if (com == EXIT) {
                 sc.close();
                 System.exit(0);
             }

@@ -1,4 +1,4 @@
-package pearents;
+package parents;
 
 public interface IAnimal {
     void say();

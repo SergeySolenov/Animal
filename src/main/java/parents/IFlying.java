@@ -1,4 +1,4 @@
-package pearents;
+package parents;
 
 public interface IFlying {
     void fly();

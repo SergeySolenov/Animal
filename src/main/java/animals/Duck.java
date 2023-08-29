@@ -1,7 +1,7 @@
 package animals;
 
-import pearents.IFlying;
-import pearents.Animal;
+import parents.IFlying;
+import parents.Animal;
 
 public class Duck extends Animal implements IFlying {
     public Duck(String name, int age, int weight, String color) {

@@ -1,10 +1,9 @@
 package enums;
 
 public enum TypeAnimals {
-    CAT("cat"),
-    DOG("dog"),
-    DUCK("duck");
+    CAT,
+    DOG,
+    DUCK
 
-    TypeAnimals(String cat) {
-    }
+
 }

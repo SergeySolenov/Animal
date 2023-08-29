@@ -1,6 +1,6 @@
 package animals;
 
-import pearents.Animal;
+import parents.Animal;
 
 public class Cat extends Animal {
 
