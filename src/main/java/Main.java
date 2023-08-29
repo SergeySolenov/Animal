@@ -13,24 +13,31 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         GetAnimal getAnimal = new GetAnimal();
         ArrayList<Animal> animal = new ArrayList<>();
-        while (true) {
-            System.out.println("Введите команду (add/list/exit):");
-            Command com = Command.valueOf(sc.next().toUpperCase());
-            if (com == ADD) {
-                getAnimal.add(sc, animal);
+            while (true) {
+                try {
+                System.out.println("Введите команду (add/list/exit):");
+                Command com = Command.valueOf(sc.next().toUpperCase());
 
-            }
-            if (com == LIST) {
-                for (Animal el : animal) {
-                    System.out.println(el.toString());
+
+                if (com == ADD) {
+                    getAnimal.add(sc, animal);
 
                 }
-            }
-            if (com == EXIT) {
-                sc.close();
-                System.exit(0);
-            }
+                if (com == LIST) {
+                    for (Animal el : animal) {
+                        System.out.println(el.toString());
 
+                    }
+                }
+                if (com == EXIT) {
+                    sc.close();
+                    System.exit(0);
+                }
+
+            }
+                catch (Exception e) {
+                    System.out.println("Упс, такой команды нет!");
+                }
         }
     }
 }
