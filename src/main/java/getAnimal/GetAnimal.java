@@ -44,8 +44,7 @@ public class GetAnimal {
                 case DOG -> animal.add(new Dog(name, age, weight, color));
                 case DUCK -> animal.add(new Duck(name, age, weight, color));
             }
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
             System.out.println("Упс, вы что-то напутали");
         }
     }
